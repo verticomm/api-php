@@ -93,16 +93,16 @@ class Api
         $this->instance = $instance;
     }
 
-	/**
-	 * Makes a request
-	 *
-	 * @param string $method
-	 * @param array $post_params
-	 * @throws \InvalidArgumentException
-	 *
-	 * @return resource
-	 *
-	 */
+    /**
+     * Makes a request
+     *
+     * @param string $method
+     * @param array $post_params
+     * @throws \InvalidArgumentException
+     *
+     * @return resource
+     *
+     */
     private function request( $method, $post_params = array() )
     {
         if ( 'POST' === $this->request_method && false === $this->getSecret() )
@@ -121,9 +121,9 @@ class Api
         {
             $post_params['secure_hash'] = $this->calculateSecureHash( $curl_url );
             
-            curl_setopt( $curl, CURLOPT_POST, true );
-			      curl_setopt( $curl, CURLOPT_VERBOSE, false );
-			      curl_setopt( $curl, CURLOPT_POSTFIELDS, http_build_query( $post_params ) );
+            curl_setopt( $curl, CURLOPT_POST, true )
+            curl_setopt( $curl, CURLOPT_VERBOSE, false );
+	    curl_setopt( $curl, CURLOPT_POSTFIELDS, http_build_query( $post_params ) );
         }
         $response   = curl_exec( $curl );
         curl_close( $curl );
@@ -186,13 +186,13 @@ class Api
         return sha1( $url . $this->secret );
     }
 
-	/**
-	 * Constructs final URI.
-	 *
-	 * @param string $method
-	 * @param array|bool $filters
-	 * @return string
-	 */
+     /**
+     * Constructs final URI.
+     *
+     * @param string $method
+     * @param array|bool $filters
+     * @return string
+     */
     private function methodConstruct( $method, $filters = false )
     {
         if ( false !== $filters && is_array( $filters ) )
@@ -250,12 +250,12 @@ class Api
         return $this->request( $method, $post_params );
     }
 
-	/**
-	 * Calls productSearch endpoint.
-	 *
-	 * @param string $params
-	 * @return resource
-	 */
+     /**
+     * Calls productSearch endpoint.
+     *
+     * @param string $params
+     * @return resource
+     */
     public function productSearch( $params )
     {
         $method = 'productSearch/' . urlencode( $params['params'] );
