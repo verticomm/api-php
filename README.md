@@ -28,8 +28,8 @@ How To Use
 
     $params =  array( 
         'username' => ‘johndoe’,
-        'password' => ‘secretpass123,
-);
+        'password' => ‘secretpass123
+    );
 
 #### Perform the request! ####
 
