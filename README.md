@@ -49,4 +49,4 @@ GET Request Example with some params
 
 That is it! Really simple, works great.
 
-To see full list of endpoints please go to the our docs in http://docs.verticommtest.apiary.io/
+To see full list of endpoints please go to the our docs in http://docs.verticomm.apiary.io/
